@@ -27,6 +27,28 @@ namespace Assignment
 
             return (count, popped, peek, countAfterPeek);
         }
+        public string[] LCT03_ActionStack()
+        {
+            Action action1 = new Action { Name = "Action 1" };
+            Action action2 = new Action { Name = "Action 2" };
+            Action action3 = new Action { Name = "Action 3" };
+
+            Stack<Action> stack = new Stack<Action>();
+            stack.Push(action1);
+            stack.Push(action2);
+            stack.Push(action3);
+
+            int c = stack.Count;
+            List<string> actions = new List<string>();
+            for (int i = 0; i < c; i++)
+            {
+                var action = stack.Pop();
+                actions.Add(action.Name);
+            }
+
+            // actions => action3, action2, action1
+            return actions.ToArray();
+        }
 
         public (int Count, int Dequeued, int Peek, int CountAfterPeek) LCT02_QueueSyntax()
         {
@@ -42,6 +64,7 @@ namespace Assignment
 
             return (count, dequeued, peek, countAfterPeek);
         }
+
 
         public string[] LCT04_ActionQueue()
         {
